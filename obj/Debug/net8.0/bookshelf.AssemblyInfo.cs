@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("bookshelf")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1b9a734514a3ee6cb64ebe4e60159ff1c17f848f")]
 [assembly: System.Reflection.AssemblyProductAttribute("bookshelf")]
 [assembly: System.Reflection.AssemblyTitleAttribute("bookshelf")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

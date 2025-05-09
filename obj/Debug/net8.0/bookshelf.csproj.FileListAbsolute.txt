@@ -175,3 +175,4 @@
 /home/federico/repos/bookshelf/obj/Debug/net8.0/bookshelf.pdb
 /home/federico/repos/bookshelf/obj/Debug/net8.0/bookshelf.genruntimeconfig.cache
 /home/federico/repos/bookshelf/obj/Debug/net8.0/ref/bookshelf.dll
+/home/federico/repos/bookshelf/obj/Debug/net8.0/bookshelf.sourcelink.json
