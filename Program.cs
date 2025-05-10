@@ -10,8 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
-var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
-builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
+// var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+// builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
 
 
 // Configure Swagger with JWT support
@@ -72,7 +72,7 @@ builder.Services.AddCors(options => //enable CORS
 {
     options.AddDefaultPolicy(policy =>
     {
-        policy.WithOrigins("https://bookshelfederico.netlify.app")
+        policy.WithOrigins("http://localhost:4200")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
@@ -93,8 +93,8 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseCors();
 }
-app.UseCors();
 
 app.UseHttpsRedirection();
 
