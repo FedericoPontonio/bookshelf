@@ -72,7 +72,7 @@ builder.Services.AddCors(options => //enable CORS
 {
     options.AddDefaultPolicy(policy =>
     {
-        policy.WithOrigins("http://localhost:4200")
+        policy.WithOrigins("bookshelfederico.netlify.app")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
