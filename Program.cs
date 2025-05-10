@@ -72,7 +72,7 @@ builder.Services.AddCors(options => //enable CORS
 {
     options.AddDefaultPolicy(policy =>
     {
-        policy.WithOrigins("bookshelfederico.netlify.app")
+        policy.WithOrigins("https://bookshelfederico.netlify.app")
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
@@ -93,8 +93,8 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
-    app.UseCors();
 }
+app.UseCors();
 
 app.UseHttpsRedirection();
 
