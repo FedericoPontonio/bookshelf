@@ -29,7 +29,8 @@ namespace MyFirstApi.Controllers
                     Title = b.Title,
                     Author = b.Author,
                     Image = b.Image,
-                    Notes = b.Notes
+                    Notes = b.Notes,
+                    IsRead = b.IsRead
                 })
                 .ToListAsync();
 
@@ -54,7 +55,8 @@ namespace MyFirstApi.Controllers
                 Title = book.Title,
                 Author = book.Author,
                 Image = book.Image,
-                Notes = book.Notes
+                Notes = book.Notes,
+                IsRead = book.IsRead
 
             };
 
@@ -72,7 +74,8 @@ namespace MyFirstApi.Controllers
                     Title = b.Title,
                     Author = b.Author,
                     Image = b.Image,
-                    Notes = b.Notes
+                    Notes = b.Notes,
+                    IsRead = b.IsRead
                 })
                 .ToListAsync();
 
@@ -126,6 +129,18 @@ namespace MyFirstApi.Controllers
 
             return NoContent();
         }
+        // PUT: api/Book/isRead/5
+        [HttpPut("isRead/{id}")]
 
+        public async Task<IActionResult> ToggleBookIsReadStatus(int id)
+        {
+            var book = await _context.Books.FindAsync(id);
+            if (book == null) return NotFound();
+
+
+            book.IsRead = !book.IsRead;
+            await _context.SaveChangesAsync();
+            return NoContent();
+        }
     }
 }
