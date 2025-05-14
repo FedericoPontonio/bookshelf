@@ -82,7 +82,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     // options.UseInMemoryDatabase("TestDb"));
 
     //azure configured db
-    options.UseSqlServer("Server=tcp:bookshelf.database.windows.net,1433;Initial Catalog=bookshelfDB;Persist Security Info=False;User ID=CloudSAcd4bbd3f;Password=Francesca97@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
 
