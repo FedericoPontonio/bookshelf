@@ -11,7 +11,7 @@ namespace Database
         public DbSet<Book> Books { get; set; } = null!;
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Configurazione della relazione uno-a-molti tra User e Book
+            // Configurazione della relazione uno a molti tra User e Book
             modelBuilder.Entity<Book>()
                 .HasOne(b => b.User)
                 .WithMany(u => u.Books)
@@ -19,7 +19,7 @@ namespace Database
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Book>()
-                .HasIndex(b => new { b.Title, b.Author }) // Separate index configuration
+                .HasIndex(b => new { b.Title, b.Author }) // chiave compsta per checkare se book gia aggiunto
                 .IsUnique();
 
             modelBuilder.Entity<User>()
@@ -35,7 +35,6 @@ namespace Database
         public string? Email { get; set; }
 
         public string? PasswordHash { get; set; }
-        // Navigation property
         public List<Book> Books { get; set; } = new();
 
     }
@@ -46,9 +45,10 @@ namespace Database
         public string? Author { get; set; }
         public string? Image { get; set; }
         public string? Notes { get; set; }
+        public bool IsRead { get; set; }
 
 
         public int UserId { get; set; } // Foreign key
-        public User User { get; set; } = null!; // Navigation property
+        public User User { get; set; } = null!;
     }
 }

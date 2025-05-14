@@ -7,6 +7,7 @@ namespace Database.DTOs
         public string? Author { get; set; }
         public string? Image { get; set; }
         public string? Notes { get; set; }
+        public bool IsRead { get; set; }
 
 
     }
@@ -18,6 +19,8 @@ namespace Database.DTOs
         public string? Author { get; set; }
         public string? Image { get; set; }
         public string? Notes { get; set; }
+        public bool IsRead { get; set; }
+
 
 
     }
